@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask whatIsGround;
     private bool isGrounded;
+    private bool facingRight = true;
 
     [SerializeField] private Animator anim;
     
@@ -30,6 +31,11 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
             Jump();
         AnimationControllers();
+
+        if (rb.velocity.x < 0 && facingRight)
+            ChangePlayerDirection();
+        else if (rb.velocity.x > 0 && !facingRight)
+            ChangePlayerDirection();
 
     }
 
@@ -62,4 +68,12 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
+
+    private void ChangePlayerDirection()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+
+
 }
