@@ -362,6 +362,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  anim: {fileID: 1114388276}
 --- !u!95 &1114388276
 Animator:
   serializedVersion: 5

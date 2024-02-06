@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    private Rigidbody2D playerRB;
+    private Rigidbody2D rb;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float groundCheckRadius;
@@ -13,12 +13,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     private bool isGrounded;
 
-    [SerializeField] private Animator playerAnim;
+    [SerializeField] private Animator anim;
     
 
     private void Awake()
     {
-        playerRB = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -35,20 +35,22 @@ public class PlayerController : MonoBehaviour
 
     private void AnimationControllers()
     {
-        bool isMoving = playerRB.velocity.x != 0;
-        playerAnim.SetBool("isMoving", isMoving);
+
+        anim.SetFloat("xVelocity", rb.velocity.x);
+        anim.SetFloat("yVelocity", rb.velocity.y);
+        anim.SetBool("isGrounded", isGrounded);
     }
 
     private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
     private void Movement()
     {
         float xInput = Input.GetAxis("Horizontal");
-        playerRB.velocity = new Vector2(xInput * moveSpeed, playerRB.velocity.y);
+        rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
     }
 
     private void OnDrawGizmos()
