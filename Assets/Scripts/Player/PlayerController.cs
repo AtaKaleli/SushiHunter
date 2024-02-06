@@ -18,10 +18,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Movement();
 
+    }
+
+    private void Movement()
+    {
         float xInput = Input.GetAxis("Horizontal");
         playerRB.velocity = new Vector2(xInput * moveSpeed, playerRB.velocity.y);
-
-
     }
 }
