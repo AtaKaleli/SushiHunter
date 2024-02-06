@@ -12,16 +12,23 @@ public class TargetSpawner : MonoBehaviour
     private float timer;
     [SerializeField] private float cooldown;
 
-    // Update is called once per frame
+    private int sushiCreated = 0;
+    private int sushiMilestone = 5;
 
     void Update()
     {
 
         timer -= Time.deltaTime;
-
+        
         if (timer < 0)
         {
-
+            sushiCreated++;
+            print(sushiCreated);
+            if(sushiCreated > sushiMilestone && cooldown> .55f)
+            {
+                sushiMilestone += 5;
+                cooldown -= .3f;
+            }
 
             GameObject newTarget = Instantiate(targetPrefab);
 
@@ -31,7 +38,7 @@ public class TargetSpawner : MonoBehaviour
             int spriteIndex = Random.Range(0, targetSprite.Length);
             newTarget.GetComponent<SpriteRenderer>().sprite = targetSprite[spriteIndex];
 
-
+           
             timer = cooldown;
 
         }
