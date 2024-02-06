@@ -51,6 +51,7 @@ public class GunController : MonoBehaviour
         gunAnim.SetTrigger("shoot");
         GameObject newBullet = Instantiate(bulletPref, gun.position, Quaternion.identity);
         newBullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
+        Destroy(newBullet, 5);
 
     }
 
