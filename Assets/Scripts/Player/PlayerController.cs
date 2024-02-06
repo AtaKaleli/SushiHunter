@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     private bool isGrounded;
 
-
+    [SerializeField] private Animator playerAnim;
+    private bool isMoving;
 
     private void Awake()
     {
@@ -28,6 +29,10 @@ public class PlayerController : MonoBehaviour
 
         if(isGrounded)
             Jump();
+
+        isMoving = playerRB.velocity.x != 0;
+        playerAnim.SetBool("isMoving", isMoving);
+        
 
     }
 
