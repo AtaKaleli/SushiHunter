@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     [SerializeField] private Animator playerAnim;
-    private bool isMoving;
+    
 
     private void Awake()
     {
@@ -23,17 +23,20 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+
         Movement();
         JumpCollisionDetection();
 
-        if(isGrounded)
+        if (isGrounded)
             Jump();
+        AnimationControllers();
 
-        isMoving = playerRB.velocity.x != 0;
+    }
+
+    private void AnimationControllers()
+    {
+        bool isMoving = playerRB.velocity.x != 0;
         playerAnim.SetBool("isMoving", isMoving);
-        
-
     }
 
     private void Jump()
