@@ -31,12 +31,16 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
             Jump();
         AnimationControllers();
+        ChangeDirectionController();
 
+    }
+
+    private void ChangeDirectionController()
+    {
         if (rb.velocity.x < 0 && facingRight)
             ChangePlayerDirection();
         else if (rb.velocity.x > 0 && !facingRight)
             ChangePlayerDirection();
-
     }
 
     private void AnimationControllers()
