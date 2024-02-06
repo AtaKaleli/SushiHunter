@@ -9,6 +9,8 @@ public class GunController : MonoBehaviour
     [SerializeField] private Animator gunAnim;
     [SerializeField] private float gunDistance = 1.5f;
     private bool gunFacingRight = true;
+    [SerializeField] private GameObject bulletPref;
+    [SerializeField] private float bulletSpeed;
 
     void Start()
     {
@@ -29,7 +31,7 @@ public class GunController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Shoot();
+            Shoot(direction);
         }
 
         GunFlipController(mousePos);
@@ -44,9 +46,12 @@ public class GunController : MonoBehaviour
             GunFlip();
     }
 
-    private void Shoot()
+    private void Shoot(Vector3 direction)
     {
         gunAnim.SetTrigger("shoot");
+        GameObject newBullet = Instantiate(bulletPref, gun.position, Quaternion.identity);
+        newBullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
+
     }
 
     private void GunFlip()
