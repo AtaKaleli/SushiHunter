@@ -15,11 +15,13 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
 
     [SerializeField] private Animator anim;
+   
     
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()
@@ -38,9 +40,13 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeDirectionController()
     {
-        if (rb.velocity.x < 0 && facingRight)
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // mouse position
+
+
+
+        if (mousePos.x  < transform.position.x && facingRight)
             ChangePlayerDirection();
-        else if (rb.velocity.x > 0 && !facingRight)
+        else if (mousePos.x > transform.position.x && !facingRight)
             ChangePlayerDirection();
     }
 
