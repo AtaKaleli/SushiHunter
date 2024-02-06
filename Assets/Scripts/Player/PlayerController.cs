@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded)
             Jump();
+        
         AnimationControllers();
         ChangeDirectionController();
 
