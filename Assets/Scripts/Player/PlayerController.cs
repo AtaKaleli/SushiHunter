@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D playerRB;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float jumpForce;
 
 
 
@@ -20,6 +21,14 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
 
+        if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+
+    }
+
+    private void Jump()
+    {
+        playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
     }
 
     private void Movement()
