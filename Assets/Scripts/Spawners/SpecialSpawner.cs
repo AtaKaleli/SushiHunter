@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class SpecialSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    [SerializeField] private BoxCollider2D boxCD;
+    [SerializeField] private GameObject specialPrefab;
+    private float timer = 0;
+    [SerializeField] private int specialCooldown = 10;
+
+  
+
+    private void Awake()
     {
-        
+        timer = specialCooldown;
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+        timer -= Time.deltaTime;
+
+
+        if (timer <= 0)
+        {
+
+            GameObject newTarget = Instantiate(specialPrefab);
+
+            float randomX = Random.Range(boxCD.bounds.min.x, boxCD.bounds.max.x);
+            newTarget.transform.position = new Vector3(randomX, transform.position.y);
+
+            timer = specialCooldown;
+            
+
+            
+
+            
+
+        }
+
     }
 }
