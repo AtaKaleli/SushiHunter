@@ -17,12 +17,15 @@ public class Bullet : MonoBehaviour
     {
         transform.right = rb.velocity;
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Target")
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            UIManager.instance.AddScore();
         }
     }
 }
