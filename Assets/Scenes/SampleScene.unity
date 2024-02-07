@@ -2230,6 +2230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d40f13fa4929145b5429d16287f97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1995197417}
+  ammoText: {fileID: 1000200333}
+  timerText: {fileID: 760776713}
 --- !u!1 &1995197415
 GameObject:
   m_ObjectHideFlags: 0
