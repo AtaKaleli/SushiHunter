@@ -10,23 +10,28 @@ public class TargetSpawner : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCD;
     [SerializeField] private GameObject targetPrefab;
     private float timer;
-    [SerializeField] private float cooldown;
+    [SerializeField] private float cooldown = 2;
 
     private int sushiCreated = 0;
-    private int sushiMilestone = 5;
+    private int sushiMilestone = 10;
+
+    private void Awake()
+    {
+        timer = cooldown;
+    }
 
     void Update()
     {
 
         timer -= Time.deltaTime;
         
-        if (timer < 0)
+
+        if (timer <= 0)
         {
-            sushiCreated++;
-            print(sushiCreated);
+           
             if(sushiCreated > sushiMilestone && cooldown> .55f)
             {
-                sushiMilestone += 5;
+                sushiMilestone += 10;
                 cooldown -= .3f;
             }
 
@@ -37,8 +42,9 @@ public class TargetSpawner : MonoBehaviour
 
             int spriteIndex = Random.Range(0, targetSprite.Length);
             newTarget.GetComponent<SpriteRenderer>().sprite = targetSprite[spriteIndex];
-
            
+            sushiCreated++;
+            print(sushiCreated);
             timer = cooldown;
 
         }
