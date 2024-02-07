@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,11 +10,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI performanceText;
 
     private float timer = 0;
     private int scoreValue = 0;
 
-    
+    [SerializeField] private GameObject gameOverPanel;
+
 
     void Start()
     {
@@ -29,8 +30,8 @@ public class UIManager : MonoBehaviour
         timer += Time.deltaTime;
         ShowTimer();
 
-       
-        
+
+
 
     }
 
@@ -54,4 +55,31 @@ public class UIManager : MonoBehaviour
         ammoText.text = currrentBullet + "/" + maxBullet;
     }
 
+    public void ShowStatistics(int reloadTime, int bulletsConsumed)
+    {
+        float accuracy = bulletsConsumed > 0 ? (float)scoreValue / bulletsConsumed * 100 : 0f;
+
+        performanceText.text = "Sushies Hunted: " + scoreValue + "\n"
+            + "Play Time: " + timer.ToString("#,#") + "\n"
+            + "Bullets Consumed: " + bulletsConsumed.ToString("#,#") + "\n"
+            + "Number of Reloads: " + reloadTime.ToString("#,#") + "\n\n"
+            + "Your Accuracy: " + accuracy.ToString("#,#") + "%";
+    }
+
+
+
+
+    public void OpenGameOverScreen()
+    {
+        Time.timeScale = 0;
+        gameOverPanel.SetActive(true);
+        ShowStatistics(0, 0);
+
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GameScene");
+    }
 }

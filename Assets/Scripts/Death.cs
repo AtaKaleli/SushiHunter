@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GunController gunController;
     void Start()
     {
         
@@ -22,7 +22,8 @@ public class Death : MonoBehaviour
     {
         if(collision.tag == "Target" || collision.tag == "Player")
         {
-            Time.timeScale = 0;
+            UIManager.instance.OpenGameOverScreen();
+            UIManager.instance.ShowStatistics(gunController.reloadTime, gunController.bulletsShooted);
         }
     }
 }

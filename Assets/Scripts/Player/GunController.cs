@@ -12,6 +12,9 @@ public class GunController : MonoBehaviour
     private int currentBullet;
     [SerializeField] private int maxBullet = 15;
 
+    public int reloadTime = 0;
+    public int bulletsShooted = 0;
+
     void Start()
     {
         Reload();
@@ -36,9 +39,10 @@ public class GunController : MonoBehaviour
 
         GunFlipController(mousePos);
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !HaveBullets())
         {
             Reload();
+            reloadTime++;
         }
 
     }
@@ -54,6 +58,7 @@ public class GunController : MonoBehaviour
     private void Shoot(Vector3 direction)
     {
         UIManager.instance.UpdateAmmoInfo(currentBullet, maxBullet);
+        bulletsShooted++;
         gunAnim.SetTrigger("shoot");
         GameObject newBullet = Instantiate(bulletPref, gun.position, Quaternion.identity);
         newBullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
@@ -71,7 +76,8 @@ public class GunController : MonoBehaviour
     private void Reload()
     {
         currentBullet = maxBullet;
-        UIManager.instance.UpdateAmmoInfo(currentBullet, maxBullet);
+        if(UIManager.instance != null)
+            UIManager.instance.UpdateAmmoInfo(currentBullet, maxBullet);
     }
 
     private bool HaveBullets()
