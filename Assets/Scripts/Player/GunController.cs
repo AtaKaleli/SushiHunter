@@ -9,7 +9,7 @@ public class GunController : MonoBehaviour
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private float bulletSpeed;
 
-    [SerializeField] private int currentBullet;
+    private int currentBullet;
     [SerializeField] private int maxBullet = 15;
 
     void Start()
@@ -53,12 +53,12 @@ public class GunController : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        
-            gunAnim.SetTrigger("shoot");
-            GameObject newBullet = Instantiate(bulletPref, gun.position, Quaternion.identity);
-            newBullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
-            Destroy(newBullet, 5);
-        
+        UIManager.instance.UpdateAmmoInfo(currentBullet, maxBullet);
+        gunAnim.SetTrigger("shoot");
+        GameObject newBullet = Instantiate(bulletPref, gun.position, Quaternion.identity);
+        newBullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * bulletSpeed;
+        Destroy(newBullet, 5);
+
 
     }
 
@@ -71,15 +71,17 @@ public class GunController : MonoBehaviour
     private void Reload()
     {
         currentBullet = maxBullet;
+        UIManager.instance.UpdateAmmoInfo(currentBullet, maxBullet);
     }
 
     private bool HaveBullets()
     {
         if (currentBullet <= 0)
             return false;
-        
+
         currentBullet--;
         return true;
+
     }
 
 

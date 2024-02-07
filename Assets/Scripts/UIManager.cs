@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     private float timer = 0;
     private int scoreValue = 0;
 
+    
+
     void Start()
     {
         instance = this; // meaningful if we have only  1 UI as an instance
@@ -28,7 +30,7 @@ public class UIManager : MonoBehaviour
         ShowTimer();
 
        
-
+        
 
     }
 
@@ -46,4 +48,10 @@ public class UIManager : MonoBehaviour
         scoreValue++;
         scoreText.text = scoreValue.ToString();
     }
+
+    public void UpdateAmmoInfo(int currrentBullet, int maxBullet)
+    {
+        ammoText.text = currrentBullet + "/" + maxBullet;
+    }
+
 }
