@@ -44,7 +44,7 @@ public class TargetSpawner : MonoBehaviour
             newTarget.GetComponent<SpriteRenderer>().sprite = targetSprite[spriteIndex];
            
             sushiCreated++;
-            print(sushiCreated);
+            
             timer = cooldown;
 
         }
