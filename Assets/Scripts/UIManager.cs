@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
         float accuracy = bulletsConsumed > 0 ? (float)scoreValue / bulletsConsumed * 100 : 0f;
 
         performanceText.text = "Sushies Hunted: " + scoreValue + "\n"
-            + "Play Time: " + timer.ToString("#,#") + "\n"
+            + "Play Time: " + timer.ToString("#,#") + " seconds" + "\n"
             + "Bullets Consumed: " + bulletsConsumed.ToString("#,#") + "\n"
             + "Number of Reloads: " + reloadTime.ToString("#,#") + "\n\n"
             + "Your Accuracy: " + accuracy.ToString("#,#") + "%";

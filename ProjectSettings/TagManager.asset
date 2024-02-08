@@ -7,6 +7,7 @@ TagManager:
   - Target
   - DeathArea
   - Special
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -8,11 +8,11 @@ public class TargetSpawner : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCD;
     [SerializeField] private GameObject targetPrefab;
     private float timer;
-    [SerializeField] private float cooldown = 2;
+    [SerializeField] private float cooldown = 3;
 
 
     private int sushiCreated = 0;
-    private int sushiMilestone = 10;
+    private int sushiMilestone = 15;
     public RandomSpecial randomSpecial;
 
 
@@ -31,10 +31,10 @@ public class TargetSpawner : MonoBehaviour
         if (timer <= 0)
         {
 
-            if (sushiCreated > sushiMilestone && cooldown > .55f)
+            if (sushiCreated > sushiMilestone && cooldown > .41f)
             {
-                sushiMilestone += 10;
-                cooldown -= .3f;
+                sushiMilestone += 15;
+                cooldown -= .2f;
             }
 
             GameObject newTarget = Instantiate(targetPrefab);

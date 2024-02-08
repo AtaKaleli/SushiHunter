@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your Performance
+  m_text: Game over
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54752d62e2aee7249b246359192312b8, type: 2}
   m_sharedMaterial: {fileID: 4426662968798794255, guid: 54752d62e2aee7249b246359192312b8, type: 2}
@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16feabcec3a588841aade078c2e12fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialShotCooldown: 8
+  specialShotCooldown: 12
   flingForce: 500
   bulletPref: {fileID: 6992772241881943532, guid: 4d66195f3d789964fbc143cfcd7f89e0, type: 3}
 --- !u!61 &585262492
@@ -1616,7 +1616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &717678757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2239,7 +2239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCD: {fileID: 994085069}
   specialPrefab: {fileID: 2530208344359053425, guid: f34f7cbc79bb1de4dbb2f826e0e5c29b, type: 3}
-  specialCooldown: 10
+  specialCooldown: 12
 --- !u!1 &1000200331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' 15/15'
+  m_text: 5/5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2571,7 +2571,7 @@ MonoBehaviour:
   bulletPref: {fileID: 6992772241881943532, guid: 4d66195f3d789964fbc143cfcd7f89e0, type: 3}
   bulletSpeed: 15
   currentBullet: 0
-  maxBullet: 15
+  maxBullet: 5
   reloadTime: 0
   bulletsShooted: 0
 --- !u!1 &1494820769
@@ -2965,7 +2965,7 @@ GameObject:
   - component: {fileID: 1629525990}
   - component: {fileID: 1629525989}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: FreezeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3011,7 +3011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cool Down!
+  m_text: 'Freeze!
 
 
     Make a Strategy'
@@ -3253,7 +3253,7 @@ MonoBehaviour:
   boxCD: {fileID: 1703614851}
   targetPrefab: {fileID: 2273454998411621474, guid: 251218fc4cd71d449b9b3547ea319aea, type: 3}
   cooldown: 2
-  randomSpecial: {fileID: 0}
+  randomSpecial: {fileID: 6340806621033265648, guid: f34f7cbc79bb1de4dbb2f826e0e5c29b, type: 3}
 --- !u!1 &1791018901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,7 +3848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2039827648
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3971,7 +3971,7 @@ GameObject:
   - component: {fileID: 2041796758}
   m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

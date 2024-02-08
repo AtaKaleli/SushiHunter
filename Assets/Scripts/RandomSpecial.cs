@@ -1,24 +1,22 @@
 using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RandomSpecial : MonoBehaviour
 {
 
-    
-    
+
+
     public bool checkDrag;
-    
 
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (collision.gameObject.tag == "Player")
+        if (collision.tag == "Player")
         {
 
-            int randomSpecialIndex = 2;//Random.Range(0, 4);
+            int randomSpecialIndex = Random.Range(0, 3);
 
             switch (randomSpecialIndex)
             {
@@ -44,25 +42,20 @@ public class RandomSpecial : MonoBehaviour
                 default:
                     break;
             }
-            
-            
-            
+
         }
 
-        
-
-
-
-        
-
-        
+        else if (collision.tag == "DeathArea")
+            Destroy(gameObject);
     }
+
+
+
 
     IEnumerator TargetSlowDown()
     {
-        Rigidbody2D specialRB = GetComponent<Rigidbody2D>();
-        specialRB.transform.position = new Vector3(0, -10, 0); // transfer object into somewhere like death area, dont destroy bc when destroyed, program dont works
-        yield return new WaitForSeconds(8f); // wait 8 seconds for slowing down the targets
+        TeleportSpecial();
+        yield return new WaitForSeconds(5f); // wait 8 seconds for slowing down the targets
 
 
         UIManager.instance.ChangeSpecialCase0();
@@ -73,8 +66,7 @@ public class RandomSpecial : MonoBehaviour
 
     IEnumerator StopTimer()
     {
-        Rigidbody2D specialRB = GetComponent<Rigidbody2D>();
-        specialRB.transform.position = new Vector3(0, -10, 0); // transfer object into somewhere like death area, dont destroy bc when destroyed, program dont works
+        TeleportSpecial();
         yield return new WaitForSeconds(0.005f);
         UIManager.instance.ChangeSpecialCase1();
         Time.timeScale = 1;
@@ -83,11 +75,15 @@ public class RandomSpecial : MonoBehaviour
 
     IEnumerator AddAmmo()
     {
-        Rigidbody2D specialRB = GetComponent<Rigidbody2D>();
-        specialRB.transform.position = new Vector3(0, -10, 0); // transfer object into somewhere like death area, dont destroy bc when destroyed, program dont works
+        TeleportSpecial();
         yield return new WaitForSeconds(2f);
         UIManager.instance.ChangeSpecialCase2();
         Destroy(gameObject);
     }
 
+    private void TeleportSpecial()
+    {
+        Rigidbody2D specialRB = GetComponent<Rigidbody2D>();
+        specialRB.transform.position = new Vector3(0, -10, 0); // transfer object into somewhere like death area, dont destroy bc when destroyed, program dont works
+    }
 }

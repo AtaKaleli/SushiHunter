@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpecialSpawner : MonoBehaviour
 {
-    
+
     [SerializeField] private BoxCollider2D boxCD;
     [SerializeField] private GameObject specialPrefab;
     private float timer = 0;
     [SerializeField] private int specialCooldown = 10;
 
-  
+
 
     private void Awake()
     {
@@ -33,11 +31,6 @@ public class SpecialSpawner : MonoBehaviour
             newTarget.transform.position = new Vector3(randomX, transform.position.y);
 
             timer = specialCooldown;
-            
-
-            
-
-            
 
         }
 
