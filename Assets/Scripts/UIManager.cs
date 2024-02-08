@@ -12,7 +12,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI performanceText;
     [SerializeField] private GameObject Special_case0;
+    [SerializeField] private GameObject Special_case1;
     private bool special_case0_check;
+    private bool special_case1_check;
 
     private float timer = 0;
     private int scoreValue = 0;
@@ -87,8 +89,15 @@ public class UIManager : MonoBehaviour
 
     public void ChangeSpecialCase0()
     {
-        print(special_case0_check);
+        
         special_case0_check = !special_case0_check;
         Special_case0.SetActive(special_case0_check);
+    }
+
+    public void ChangeSpecialCase1() // in this case, allow player to shoot, when freeze becomes unfreeze, shoots will be directed to targets
+    {
+        
+        special_case1_check = !special_case1_check;
+        Special_case1.SetActive(special_case1_check);
     }
 }

@@ -17,7 +17,7 @@ public class RandomSpecial : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
-            int randomSpecialIndex = 0; //Random.Range(0, 4);
+            int randomSpecialIndex = 1; //Random.Range(0, 4);
 
             switch (randomSpecialIndex)
             {
@@ -25,9 +25,13 @@ public class RandomSpecial : MonoBehaviour
                     UIManager.instance.ChangeSpecialCase0();
                     Time.timeScale = 0.75f;
                     checkDrag = true;
-                    StartCoroutine(SpecialCount());
-                    
+                    StartCoroutine(TargetSlowDown());
+                    break;
 
+                case 1:
+                    UIManager.instance.ChangeSpecialCase1();
+                    Time.timeScale = 0.001f;
+                    StartCoroutine(StopTimer());
                     break;
 
 
@@ -48,11 +52,8 @@ public class RandomSpecial : MonoBehaviour
         
     }
 
-    IEnumerator SpecialCount()
+    IEnumerator TargetSlowDown()
     {
-
-
-        
         Rigidbody2D specialRB = GetComponent<Rigidbody2D>();
         specialRB.transform.position = new Vector3(0, -10, 0); // transfer object into somewhere like death area, dont destroy bc when destroyed, program dont works
         yield return new WaitForSeconds(8f); // wait 8 seconds for slowing down the targets
@@ -60,6 +61,14 @@ public class RandomSpecial : MonoBehaviour
 
         UIManager.instance.ChangeSpecialCase0();
         checkDrag = false;
+        Time.timeScale = 1;
+        Destroy(gameObject);
+    }
+
+    IEnumerator StopTimer()
+    {
+        yield return new WaitForSeconds(0.005f);
+        UIManager.instance.ChangeSpecialCase1();
         Time.timeScale = 1;
         Destroy(gameObject);
     }
