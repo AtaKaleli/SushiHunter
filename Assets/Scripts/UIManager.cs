@@ -67,6 +67,7 @@ public class UIManager : MonoBehaviour
     {
         float accuracy = bulletsConsumed > 0 ? (float)scoreValue / bulletsConsumed * 100 : 0f;
 
+
         performanceText.text = "Sushies Hunted: " + scoreValue + "\n"
             + "Play Time: " + timer.ToString("#,#") + " seconds" + "\n"
             + "Bullets Consumed: " + bulletsConsumed.ToString("#,#") + "\n"
@@ -81,6 +82,9 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
+        Special_case0.SetActive(false);
+        Special_case1.SetActive(false);
+        Special_case2.SetActive(false);
         ShowStatistics(0, 0);
 
     }

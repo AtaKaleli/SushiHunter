@@ -12,7 +12,7 @@ public class TargetSpawner : MonoBehaviour
 
 
     private int sushiCreated = 0;
-    private int sushiMilestone = 15;
+    private int sushiMilestone = 20;
     public RandomSpecial randomSpecial;
 
 
@@ -33,7 +33,7 @@ public class TargetSpawner : MonoBehaviour
 
             if (sushiCreated > sushiMilestone && cooldown > .41f)
             {
-                sushiMilestone += 15;
+                sushiMilestone += 20;
                 cooldown -= .2f;
             }
 

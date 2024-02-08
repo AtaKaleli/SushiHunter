@@ -34,7 +34,9 @@ public class GunController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && HaveBullets())
         {
+            currentBullet--;
             Shoot(direction);
+            
         }
 
         GunFlipController(mousePos);
@@ -84,8 +86,6 @@ public class GunController : MonoBehaviour
     {
         if (currentBullet <= 0)
             return false;
-
-        currentBullet--;
         return true;
 
     }
