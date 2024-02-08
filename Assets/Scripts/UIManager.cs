@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI performanceText;
+    [SerializeField] private GameObject Special_case0;
+    private bool special_case0_check;
 
     private float timer = 0;
     private int scoreValue = 0;
@@ -81,5 +83,12 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
+    }
+
+    public void ChangeSpecialCase0()
+    {
+        print(special_case0_check);
+        special_case0_check = !special_case0_check;
+        Special_case0.SetActive(special_case0_check);
     }
 }

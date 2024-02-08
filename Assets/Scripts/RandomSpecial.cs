@@ -5,8 +5,8 @@ using UnityEngine;
 public class RandomSpecial : MonoBehaviour
 {
 
-
-    [SerializeField] private float specialCooldown = 5;
+    
+    
     public bool checkDrag;
 
     
@@ -22,9 +22,12 @@ public class RandomSpecial : MonoBehaviour
             switch (randomSpecialIndex)
             {
                 case 0:
+                    UIManager.instance.ChangeSpecialCase0();
                     Time.timeScale = 0.75f;
                     checkDrag = true;
                     StartCoroutine(SpecialCount());
+                    
+
                     break;
 
 
@@ -53,9 +56,9 @@ public class RandomSpecial : MonoBehaviour
         Rigidbody2D specialRB = GetComponent<Rigidbody2D>();
         specialRB.transform.position = new Vector3(0, -10, 0); // transfer object into somewhere like death area, dont destroy bc when destroyed, program dont works
         yield return new WaitForSeconds(8f); // wait 8 seconds for slowing down the targets
-      
-        
 
+
+        UIManager.instance.ChangeSpecialCase0();
         checkDrag = false;
         Time.timeScale = 1;
         Destroy(gameObject);
