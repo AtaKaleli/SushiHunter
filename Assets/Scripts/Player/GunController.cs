@@ -9,8 +9,8 @@ public class GunController : MonoBehaviour
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private float bulletSpeed;
 
-    private int currentBullet;
-    [SerializeField] private int maxBullet = 15;
+    public int currentBullet;
+    public int maxBullet = 15;
 
     public int reloadTime = 0;
     public int bulletsShooted = 0;

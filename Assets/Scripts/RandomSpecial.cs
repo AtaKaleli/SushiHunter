@@ -8,8 +8,9 @@ public class RandomSpecial : MonoBehaviour
     
     
     public bool checkDrag;
-
     
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,7 +18,7 @@ public class RandomSpecial : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
-            int randomSpecialIndex = 1; //Random.Range(0, 4);
+            int randomSpecialIndex = 2;//Random.Range(0, 4);
 
             switch (randomSpecialIndex)
             {
@@ -32,6 +33,11 @@ public class RandomSpecial : MonoBehaviour
                     UIManager.instance.ChangeSpecialCase1();
                     Time.timeScale = 0.001f;
                     StartCoroutine(StopTimer());
+                    break;
+
+                case 2:
+                    UIManager.instance.ChangeSpecialCase2();
+                    Destroy(gameObject);
                     break;
 
 

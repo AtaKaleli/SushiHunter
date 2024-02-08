@@ -2283,6 +2283,7 @@ MonoBehaviour:
   gunDistance: 1.2
   bulletPref: {fileID: 6992772241881943532, guid: 4d66195f3d789964fbc143cfcd7f89e0, type: 3}
   bulletSpeed: 15
+  currentBullet: 0
   maxBullet: 15
   reloadTime: 0
   bulletsShooted: 0
@@ -3122,6 +3123,7 @@ MonoBehaviour:
   performanceText: {fileID: 1494820771}
   Special_case0: {fileID: 191132905}
   Special_case1: {fileID: 419396317}
+  Special_case2: {fileID: 1114388277}
   gameOverPanel: {fileID: 717678756}
 --- !u!1 &1972023027
 GameObject:
