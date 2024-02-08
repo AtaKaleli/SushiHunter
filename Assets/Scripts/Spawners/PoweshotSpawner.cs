@@ -8,7 +8,7 @@ public class PoweshotSpawner : MonoBehaviour
     [SerializeField] private float flingForce = 500;
     [SerializeField] private GameObject bulletPref;
     private float timer;
-
+    public int powershotUsed = 0;
 
     private void Awake()
     {
@@ -22,8 +22,8 @@ public class PoweshotSpawner : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F) && timer >= specialShotCooldown)
         {
-            
-            
+
+            powershotUsed++;
 
             for (int i = 0; i < 18; i++)
             {

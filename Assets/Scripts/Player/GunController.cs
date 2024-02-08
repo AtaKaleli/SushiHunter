@@ -12,7 +12,7 @@ public class GunController : MonoBehaviour
     public int currentBullet;
     public int maxBullet = 15;
 
-    public int reloadTime = 0;
+    
     public int bulletsShooted = 0;
 
     void Start()
@@ -44,7 +44,7 @@ public class GunController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !HaveBullets())
         {
             Reload();
-            reloadTime++;
+            
         }
 
     }

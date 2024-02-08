@@ -23,7 +23,7 @@ public class Death : MonoBehaviour
         if(collision.tag == "Target" || collision.tag == "Player")
         {
             UIManager.instance.OpenGameOverScreen();
-            UIManager.instance.ShowStatistics(gunController.reloadTime, gunController.bulletsShooted);
+            UIManager.instance.ShowStatistics(gunController.bulletsShooted);
         }
     }
 }

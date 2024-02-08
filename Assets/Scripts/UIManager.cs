@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     private int scoreValue = 0;
 
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private PoweshotSpawner powershotSpawner;
 
 
     void Start()
@@ -63,15 +64,15 @@ public class UIManager : MonoBehaviour
         ammoText.text = currrentBullet + "/" + maxBullet;
     }
 
-    public void ShowStatistics(int reloadTime, int bulletsConsumed)
+    public void ShowStatistics(int bulletsConsumed)
     {
         float accuracy = bulletsConsumed > 0 ? (float)scoreValue / bulletsConsumed * 100 : 0f;
 
 
         performanceText.text = "Sushies Hunted: " + scoreValue + "\n"
-            + "Play Time: " + timer.ToString("#,#") + " seconds" + "\n"
             + "Bullets Consumed: " + bulletsConsumed.ToString("#,#") + "\n"
-            + "Number of Reloads: " + reloadTime.ToString("#,#") + "\n\n"
+            + "Powershot Used: " + powershotSpawner.powershotUsed.ToString() + "\n"
+            + "Play Time: " + timer.ToString("#,#") + " seconds" + "\n\n"
             + "Your Accuracy: " + accuracy.ToString("#,#") + "%";
     }
 
@@ -85,7 +86,7 @@ public class UIManager : MonoBehaviour
         Special_case0.SetActive(false);
         Special_case1.SetActive(false);
         Special_case2.SetActive(false);
-        ShowStatistics(0, 0);
+        ShowStatistics(0);
 
     }
 
