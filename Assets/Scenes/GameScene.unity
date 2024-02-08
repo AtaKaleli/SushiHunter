@@ -2587,7 +2587,7 @@ GameObject:
   - component: {fileID: 1139994045}
   - component: {fileID: 1139994044}
   m_Layer: 5
-  m_Name: SeeBadgetsText
+  m_Name: SeeBadgesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2610,8 +2610,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000015259, y: -13}
+  m_SizeDelta: {x: -36.1758, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1139994044
 MonoBehaviour:
@@ -2633,7 +2633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: See Badgets
+  m_text: See Badges
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2eeabfb24c327d44abbc749bf4e64515, type: 2}
   m_sharedMaterial: {fileID: -7280909161421981869, guid: 2eeabfb24c327d44abbc749bf4e64515, type: 2}
@@ -2660,10 +2660,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.81
+  m_fontSize: 24
   m_fontSizeBase: 26.81
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 28.42376}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2723,7 +2723,7 @@ GameObject:
   - component: {fileID: 1346827321}
   - component: {fileID: 1346827320}
   m_Layer: 5
-  m_Name: SeeBadgets
+  m_Name: SeeBadges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2747,8 +2747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6688967, y: 0.24279198}
   m_AnchorMax: {x: 0.6688967, y: 0.24279198}
-  m_AnchoredPosition: {x: -0.000030517578, y: -71}
-  m_SizeDelta: {x: 170.3359, y: 75.7998}
+  m_AnchoredPosition: {x: 6.4599, y: -71}
+  m_SizeDelta: {x: 183.2558, y: 75.7998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346827320
 MonoBehaviour:
