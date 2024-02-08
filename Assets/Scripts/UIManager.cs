@@ -13,9 +13,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI performanceText;
     [SerializeField] private GameObject Special_case0;
     [SerializeField] private GameObject Special_case1;
-    [SerializeField] private GunController Special_case2;
+    [SerializeField] private GameObject Special_case2;
+    [SerializeField] private GunController gunController;
     private bool special_case0_check;
     private bool special_case1_check;
+    private bool special_case2_check;
 
     private float timer = 0;
     private int scoreValue = 0;
@@ -26,7 +28,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         instance = this; // meaningful if we have only  1 UI as an instance
-        Special_case2 = FindObjectOfType<GunController>();
+        gunController = FindObjectOfType<GunController>();
 
     }
 
@@ -105,8 +107,10 @@ public class UIManager : MonoBehaviour
 
     public void ChangeSpecialCase2() // in this case, allow player to shoot, when freeze becomes unfreeze, shoots will be directed to targets
     {
-
-        Special_case2.maxBullet += 5;
-        UpdateAmmoInfo(Special_case2.currentBullet, Special_case2.maxBullet);
+        special_case2_check = !special_case2_check;
+        Special_case2.SetActive(special_case2_check);
+        if(special_case2_check)
+            gunController.maxBullet += 5;
+        UpdateAmmoInfo(gunController.currentBullet, gunController.maxBullet);
     }
 }

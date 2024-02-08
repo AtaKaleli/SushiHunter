@@ -37,7 +37,7 @@ public class RandomSpecial : MonoBehaviour
 
                 case 2:
                     UIManager.instance.ChangeSpecialCase2();
-                    Destroy(gameObject);
+                    StartCoroutine(AddAmmo());
                     break;
 
 
@@ -73,9 +73,20 @@ public class RandomSpecial : MonoBehaviour
 
     IEnumerator StopTimer()
     {
+        Rigidbody2D specialRB = GetComponent<Rigidbody2D>();
+        specialRB.transform.position = new Vector3(0, -10, 0); // transfer object into somewhere like death area, dont destroy bc when destroyed, program dont works
         yield return new WaitForSeconds(0.005f);
         UIManager.instance.ChangeSpecialCase1();
         Time.timeScale = 1;
+        Destroy(gameObject);
+    }
+
+    IEnumerator AddAmmo()
+    {
+        Rigidbody2D specialRB = GetComponent<Rigidbody2D>();
+        specialRB.transform.position = new Vector3(0, -10, 0); // transfer object into somewhere like death area, dont destroy bc when destroyed, program dont works
+        yield return new WaitForSeconds(2f);
+        UIManager.instance.ChangeSpecialCase2();
         Destroy(gameObject);
     }
 

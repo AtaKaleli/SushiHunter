@@ -20,7 +20,7 @@ public class PoweshotSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.F)) //&& timer >= specialShotCooldown)
+        if (Input.GetKeyDown(KeyCode.F) && timer >= specialShotCooldown)
         {
             
             
