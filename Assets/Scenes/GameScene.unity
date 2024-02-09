@@ -1284,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &323450616
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2340,7 +2340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &443455170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4140,7 +4140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &717678757
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5196,7 +5196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &961241281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7736,7 +7736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1344410238
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8379,7 +8379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1514856700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8531,7 +8531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1594454701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9380,6 +9380,18 @@ MonoBehaviour:
   seeBadgesPanel: {fileID: 4129972}
   moreInfoPanel: {fileID: 1635656629}
   powershotSpawner: {fileID: 585262491}
+  accuracyGold: {fileID: 961241280}
+  accuracySilver: {fileID: 1101370868}
+  accuracyBronze: {fileID: 1344410237}
+  survivorGold: {fileID: 1514856699}
+  survivorSilver: {fileID: 57251542}
+  survivorBronze: {fileID: 1594454700}
+  specialShotGold: {fileID: 1879863367}
+  specialShotSilver: {fileID: 1012616434}
+  specialShotBronze: {fileID: 323450615}
+  hunterGold: {fileID: 443455169}
+  hunterSilver: {fileID: 1514860721}
+  hunterBronze: {fileID: 1031687450}
 --- !u!1 &1879863367
 GameObject:
   m_ObjectHideFlags: 0
@@ -9397,7 +9409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1879863368
 RectTransform:
   m_ObjectHideFlags: 0

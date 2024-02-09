@@ -27,6 +27,27 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject moreInfoPanel;
     [SerializeField] private PoweshotSpawner powershotSpawner;
 
+    [Header("Badges")]
+
+    [SerializeField] private GameObject accuracyGold;
+    [SerializeField] private GameObject accuracySilver;
+    [SerializeField] private GameObject accuracyBronze;
+
+    
+    [SerializeField] private GameObject survivorGold;
+    [SerializeField] private GameObject survivorSilver;
+    [SerializeField] private GameObject survivorBronze;
+
+    [SerializeField] private GameObject specialShotGold;
+    [SerializeField] private GameObject specialShotSilver;
+    [SerializeField] private GameObject specialShotBronze;
+
+    [SerializeField] private GameObject hunterGold;
+    [SerializeField] private GameObject hunterSilver;
+    [SerializeField] private GameObject hunterBronze;
+    
+    private float accuracy;
+
 
     void Start()
     {
@@ -68,7 +89,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowStatistics(int bulletsConsumed)
     {
-        float accuracy = bulletsConsumed > 0 ? (float)scoreValue / bulletsConsumed * 100 : 0f;
+        accuracy = bulletsConsumed > 0 ? (float)scoreValue / bulletsConsumed * 100 : 0f;
 
 
         performanceText.text = "Sushies Hunted: " + scoreValue + "\n"
@@ -78,7 +99,7 @@ public class UIManager : MonoBehaviour
             + "Your Accuracy: " + accuracy.ToString("#,#") + "%";
     }
 
-
+    
 
 
     public void OpenGameOverScreen()
@@ -93,6 +114,57 @@ public class UIManager : MonoBehaviour
     {
         gameOverPanel.SetActive(false);
         seeBadgesPanel.SetActive(true);
+
+        int netAccuracy = Mathf.RoundToInt(accuracy);
+        int netTimer = Mathf.RoundToInt(timer);
+        int netPowershot = powershotSpawner.powershotUsed;
+        int netScore = scoreValue;
+
+        ShowAccuracyBadge(netAccuracy);
+        ShowTimerBadge(netTimer);
+        ShowPowershotBadge(netPowershot);
+        ShowHunterBadge(netScore);
+
+    }
+
+    private void ShowHunterBadge(int netScore)
+    {
+        if (netScore > 500)
+            hunterGold.SetActive(true);
+        else if (netScore < 500 && netScore > 200)
+            hunterSilver.SetActive(true);
+        else
+            hunterBronze.SetActive(true);
+    }
+
+    private void ShowPowershotBadge(int netPowershot)
+    {
+        if (netPowershot < 10)
+            specialShotGold.SetActive(true);
+        else if (netPowershot > 10 && netPowershot < 30)
+            specialShotSilver.SetActive(true);
+        else
+            specialShotBronze.SetActive(true);
+    }
+
+    private void ShowTimerBadge(int netTimer)
+    {
+        if (netTimer > 300)
+            survivorGold.SetActive(true);
+        else if (netTimer < 300 && netTimer > 120)
+            survivorSilver.SetActive(true);
+        else
+            survivorBronze.SetActive(true);
+    }
+
+    private void ShowAccuracyBadge(int netAccuracy)
+    {
+        if (netAccuracy > 75)
+            accuracyGold.SetActive(true);
+        else if (netAccuracy < 75 && netAccuracy > 25)
+            accuracySilver.SetActive(true);
+        else
+            accuracyBronze.SetActive(true);
     }
 
     public void BackToGameOverScreen()
