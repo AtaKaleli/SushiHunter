@@ -1789,7 +1789,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 433331670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1812331509}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: BackToGameOverScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &433331670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3519,12 +3531,12 @@ RectTransform:
   - {fileID: 1494820770}
   - {fileID: 940916620}
   - {fileID: 1346827319}
-  m_Father: {fileID: 1472259986}
-  m_RootOrder: 5
+  m_Father: {fileID: 1812331508}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 32, y: 9}
   m_SizeDelta: {x: 852.9354, y: 641.6851}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717678758
@@ -6921,7 +6933,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1812331509}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: SeeBadges
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7139,7 +7151,6 @@ RectTransform:
   - {fileID: 1012616435}
   - {fileID: 323450616}
   - {fileID: 1007525040}
-  - {fileID: 717678757}
   m_Father: {fileID: 4129973}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8307,6 +8318,7 @@ RectTransform:
   - {fileID: 191132906}
   - {fileID: 419396318}
   - {fileID: 136595036}
+  - {fileID: 717678757}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8336,6 +8348,7 @@ MonoBehaviour:
   Special_case2: {fileID: 136595033}
   gunController: {fileID: 1114388277}
   gameOverPanel: {fileID: 717678756}
+  seeBadgesPanel: {fileID: 4129972}
   powershotSpawner: {fileID: 585262491}
 --- !u!1 &1879863367
 GameObject:

@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
     private int scoreValue = 0;
 
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject seeBadgesPanel;
+    //[SerializeField] private GameObject moreInfoPanel;
     [SerializeField] private PoweshotSpawner powershotSpawner;
 
 
@@ -83,12 +85,31 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
+        CloseSpecialPanels();
+        ShowStatistics(0);
+    }
+
+    public void SeeBadges()
+    {
+        gameOverPanel.SetActive(false);
+        seeBadgesPanel.SetActive(true);
+    }
+
+    public void BackToGameOverScreen()
+    {
+        seeBadgesPanel.SetActive(false);
+        gameOverPanel.SetActive(true);
+    }
+
+
+
+    private void CloseSpecialPanels()
+    {
         Special_case0.SetActive(false);
         Special_case1.SetActive(false);
         Special_case2.SetActive(false);
-        ShowStatistics(0);
-
     }
+
 
     public void RestartGame()
     {
