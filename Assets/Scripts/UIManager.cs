@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject seeBadgesPanel;
-    //[SerializeField] private GameObject moreInfoPanel;
+    [SerializeField] private GameObject moreInfoPanel;
     [SerializeField] private PoweshotSpawner powershotSpawner;
 
 
@@ -101,6 +101,22 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
+    public void OpenMoreInfo()
+    {
+        seeBadgesPanel.SetActive(false);
+        moreInfoPanel.SetActive(true);
+    }
+
+    public void BackToBadgesScreen()
+    {
+        moreInfoPanel.SetActive(false);
+        seeBadgesPanel.SetActive(true);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
 
     private void CloseSpecialPanels()
