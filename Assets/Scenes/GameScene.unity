@@ -2485,7 +2485,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1812331509}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: SeeBadges
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4140,7 +4140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &717678757
 RectTransform:
   m_ObjectHideFlags: 0
