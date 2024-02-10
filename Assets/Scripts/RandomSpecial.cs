@@ -16,7 +16,7 @@ public class RandomSpecial : MonoBehaviour
         if (collision.tag == "Player")
         {
 
-            int randomSpecialIndex = Random.Range(0, 3);
+            int randomSpecialIndex = 0; //Random.Range(0, 3);
 
             switch (randomSpecialIndex)
             {
@@ -58,7 +58,7 @@ public class RandomSpecial : MonoBehaviour
     IEnumerator TargetSlowDown()
     {
         TeleportSpecial();
-        yield return new WaitForSeconds(5f); // wait 8 seconds for slowing down the targets
+        yield return new WaitForSeconds(5.35f); // wait 8 seconds for slowing down the targets
 
 
         UIManager.instance.ChangeSpecialCase0();
@@ -70,7 +70,7 @@ public class RandomSpecial : MonoBehaviour
     IEnumerator StopTimer()
     {
         TeleportSpecial();
-        yield return new WaitForSeconds(0.005f);
+        yield return new WaitForSeconds(0.003f);
         UIManager.instance.ChangeSpecialCase1();
         Time.timeScale = 1;
         Destroy(gameObject);

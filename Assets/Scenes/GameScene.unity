@@ -2116,13 +2116,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900c726a9917cde4a972cf1d9c6cf3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundAudioSource: {fileID: 1646333827}
   sfxAudioSource: {fileID: 429569132}
   shootSFX: {fileID: 8300000, guid: c999e705a0c6fcf4c8f5fc7b872e416b, type: 3}
   ammoAddedSFX: {fileID: 8300000, guid: 474d314a532e05743a3aed2bdaa28ce9, type: 3}
   slowTimeSFX: {fileID: 8300000, guid: c8ca13d3c9a6bea43a69289b3ad90625, type: 3}
   freezeSFX: {fileID: 8300000, guid: 0a45daa12a8e02d488296d8be5d62daa, type: 3}
-  buttonClickSFX: {fileID: 8300000, guid: 58a3c1850dd827b4697c774fa5c10468, type: 3}
+  buttonClickSFX: {fileID: 8300000, guid: 426acf91fb4e1714aa7ab55570d9df48, type: 3}
   reloadSFX: {fileID: 8300000, guid: 8ae95508564dcc24d83ed5d14714e51e, type: 3}
+  gameOverSFX: {fileID: 8300000, guid: 4fcd82185403b6345a0aabc61d4886e9, type: 3}
 --- !u!1 &433331667
 GameObject:
   m_ObjectHideFlags: 0

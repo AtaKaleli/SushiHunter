@@ -104,6 +104,8 @@ public class UIManager : MonoBehaviour
 
     public void OpenGameOverScreen()
     {
+        AudioManager.instance.PlayGameOverSFX();
+        AudioManager.instance.MuteBackgroundAudio();
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
         CloseSpecialPanels();
