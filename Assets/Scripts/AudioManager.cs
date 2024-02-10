@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip buttonClickSFX;
     [SerializeField] private AudioClip reloadSFX;
     [SerializeField] private AudioClip gameOverSFX;
+    [SerializeField] private AudioClip specialShotSFX;
+    [SerializeField] private AudioClip notYetSpecialShotSFX;
 
 
     private void Awake()
@@ -30,6 +32,9 @@ public class AudioManager : MonoBehaviour
     public void PlayReloadSFX() => sfxAudioSource.PlayOneShot(reloadSFX);
     public void PlayGameOverSFX() => sfxAudioSource.PlayOneShot(gameOverSFX);
     public void MuteBackgroundAudio() => backgroundAudioSource.Pause();
+    public void PlaySpecialShotAudio() => sfxAudioSource.PlayOneShot(specialShotSFX);
+    public void PlayNotYetSpecialShotAudio() => sfxAudioSource.PlayOneShot(notYetSpecialShotSFX);
+    
 
    
 

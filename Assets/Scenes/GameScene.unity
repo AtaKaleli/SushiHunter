@@ -2125,6 +2125,8 @@ MonoBehaviour:
   buttonClickSFX: {fileID: 8300000, guid: 426acf91fb4e1714aa7ab55570d9df48, type: 3}
   reloadSFX: {fileID: 8300000, guid: 8ae95508564dcc24d83ed5d14714e51e, type: 3}
   gameOverSFX: {fileID: 8300000, guid: 4fcd82185403b6345a0aabc61d4886e9, type: 3}
+  specialShotSFX: {fileID: 8300000, guid: 7fdef9add799b604cbc0387bfcc09bcf, type: 3}
+  notYetSpecialShotSFX: {fileID: 8300000, guid: 81b339f41a757ce4db9e8c9b72e93928, type: 3}
 --- !u!1 &433331667
 GameObject:
   m_ObjectHideFlags: 0
