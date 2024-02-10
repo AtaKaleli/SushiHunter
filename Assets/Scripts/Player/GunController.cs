@@ -36,6 +36,7 @@ public class GunController : MonoBehaviour
         {
             currentBullet--;
             Shoot(direction);
+            AudioManager.instance.PlayShootSFX();
             
         }
 
@@ -44,6 +45,7 @@ public class GunController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !HaveBullets())
         {
             Reload();
+            AudioManager.instance.PlayReloadSFX();
             
         }
 

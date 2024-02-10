@@ -112,6 +112,7 @@ public class UIManager : MonoBehaviour
 
     public void SeeBadges()
     {
+        AudioManager.instance.PlayButtonClickSFX();
         gameOverPanel.SetActive(false);
         seeBadgesPanel.SetActive(true);
 
@@ -169,24 +170,28 @@ public class UIManager : MonoBehaviour
 
     public void BackToGameOverScreen()
     {
+        AudioManager.instance.PlayButtonClickSFX();
         seeBadgesPanel.SetActive(false);
         gameOverPanel.SetActive(true);
     }
 
     public void OpenMoreInfo()
     {
+        AudioManager.instance.PlayButtonClickSFX();
         seeBadgesPanel.SetActive(false);
         moreInfoPanel.SetActive(true);
     }
 
     public void BackToBadgesScreen()
     {
+        AudioManager.instance.PlayButtonClickSFX();
         moreInfoPanel.SetActive(false);
         seeBadgesPanel.SetActive(true);
     }
 
     public void ExitGame()
     {
+        AudioManager.instance.PlayButtonClickSFX();
         Application.Quit();
     }
 
@@ -201,6 +206,7 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
+        AudioManager.instance.PlayButtonClickSFX();
         Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
     }

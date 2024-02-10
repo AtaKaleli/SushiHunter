@@ -21,6 +21,7 @@ public class RandomSpecial : MonoBehaviour
             switch (randomSpecialIndex)
             {
                 case 0:
+                    AudioManager.instance.PlaySlowTimeSFX();
                     UIManager.instance.ChangeSpecialCase0();
                     Time.timeScale = 0.75f;
                     checkDrag = true;
@@ -28,12 +29,14 @@ public class RandomSpecial : MonoBehaviour
                     break;
 
                 case 1:
+                    AudioManager.instance.PlayFreezeSFX();
                     UIManager.instance.ChangeSpecialCase1();
                     Time.timeScale = 0.001f;
                     StartCoroutine(StopTimer());
                     break;
 
                 case 2:
+                    AudioManager.instance.PlayAmmoAddedSFX();
                     UIManager.instance.ChangeSpecialCase2();
                     StartCoroutine(AddAmmo());
                     break;

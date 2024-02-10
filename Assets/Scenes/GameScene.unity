@@ -1985,6 +1985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 429569131}
   - component: {fileID: 429569132}
+  - component: {fileID: 429569133}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -2018,8 +2019,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.661
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2103,6 +2104,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &429569133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429569130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900c726a9917cde4a972cf1d9c6cf3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxAudioSource: {fileID: 429569132}
+  shootSFX: {fileID: 8300000, guid: c999e705a0c6fcf4c8f5fc7b872e416b, type: 3}
+  ammoAddedSFX: {fileID: 8300000, guid: 474d314a532e05743a3aed2bdaa28ce9, type: 3}
+  slowTimeSFX: {fileID: 8300000, guid: c8ca13d3c9a6bea43a69289b3ad90625, type: 3}
+  freezeSFX: {fileID: 8300000, guid: 0a45daa12a8e02d488296d8be5d62daa, type: 3}
+  buttonClickSFX: {fileID: 8300000, guid: 58a3c1850dd827b4697c774fa5c10468, type: 3}
+  reloadSFX: {fileID: 8300000, guid: 8ae95508564dcc24d83ed5d14714e51e, type: 3}
 --- !u!1 &433331667
 GameObject:
   m_ObjectHideFlags: 0
@@ -9012,7 +9032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1629525988
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9259,7 +9279,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a091031706abfd8449c5c3973609961d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.703
+  m_Volume: 0.133
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10812,7 +10832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2039827648
 BoxCollider2D:
   m_ObjectHideFlags: 0
