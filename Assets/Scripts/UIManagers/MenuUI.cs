@@ -10,34 +10,34 @@ public class MenuUI : MonoBehaviour
     [SerializeField] private GameObject howToPlay;
     [SerializeField] private GameObject credits;
 
-    void OnClickStartGame()
+    public void OnClickStartGame()
     {
         SceneManager.LoadScene("TutorialScene");
     }
-    void OnClickHowToPlay()
+    public void OnClickHowToPlay()
     {
         menu.SetActive(false);
         howToPlay.SetActive(true);
     }
 
-    void OnClickCredits()
+    public void OnClickCredits()
     {
         menu.SetActive(false);
         credits.SetActive(true);
     }
 
-    void OnClickExit()
+    public void OnClickExit()
     {
         Application.Quit();
     }
 
-    void OnClickBackFromCredits()
+    public void OnClickBackFromCredits()
     {
         menu.SetActive(true);
         credits.SetActive(false);
     }
 
-    void OnClickBackFromHTP()
+    public void OnClickBackFromHTP()
     {
         menu.SetActive(true);
         howToPlay.SetActive(false);
