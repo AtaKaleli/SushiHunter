@@ -1985,7 +1985,6 @@ GameObject:
   m_Component:
   - component: {fileID: 429569131}
   - component: {fileID: 429569132}
-  - component: {fileID: 429569133}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -2104,29 +2103,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &429569133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429569130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 900c726a9917cde4a972cf1d9c6cf3ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundAudioSource: {fileID: 1646333827}
-  sfxAudioSource: {fileID: 429569132}
-  shootSFX: {fileID: 8300000, guid: c999e705a0c6fcf4c8f5fc7b872e416b, type: 3}
-  ammoAddedSFX: {fileID: 8300000, guid: 474d314a532e05743a3aed2bdaa28ce9, type: 3}
-  slowTimeSFX: {fileID: 8300000, guid: c8ca13d3c9a6bea43a69289b3ad90625, type: 3}
-  freezeSFX: {fileID: 8300000, guid: 0a45daa12a8e02d488296d8be5d62daa, type: 3}
-  buttonClickSFX: {fileID: 8300000, guid: 426acf91fb4e1714aa7ab55570d9df48, type: 3}
-  reloadSFX: {fileID: 8300000, guid: 8ae95508564dcc24d83ed5d14714e51e, type: 3}
-  gameOverSFX: {fileID: 8300000, guid: 4fcd82185403b6345a0aabc61d4886e9, type: 3}
-  specialShotSFX: {fileID: 8300000, guid: 7fdef9add799b604cbc0387bfcc09bcf, type: 3}
-  notYetSpecialShotSFX: {fileID: 8300000, guid: 81b339f41a757ce4db9e8c9b72e93928, type: 3}
 --- !u!1 &433331667
 GameObject:
   m_ObjectHideFlags: 0
@@ -6205,6 +6181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1044540904}
+  - component: {fileID: 1044540905}
   m_Layer: 0
   m_Name: ====Audio====
   m_TagString: Untagged
@@ -6229,6 +6206,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1044540905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044540903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900c726a9917cde4a972cf1d9c6cf3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAudioSource: {fileID: 1646333827}
+  sfxAudioSource: {fileID: 429569132}
+  shootSFX: {fileID: 8300000, guid: c999e705a0c6fcf4c8f5fc7b872e416b, type: 3}
+  ammoAddedSFX: {fileID: 8300000, guid: 474d314a532e05743a3aed2bdaa28ce9, type: 3}
+  slowTimeSFX: {fileID: 8300000, guid: c8ca13d3c9a6bea43a69289b3ad90625, type: 3}
+  freezeSFX: {fileID: 8300000, guid: 0a45daa12a8e02d488296d8be5d62daa, type: 3}
+  buttonClickSFX: {fileID: 8300000, guid: 426acf91fb4e1714aa7ab55570d9df48, type: 3}
+  reloadSFX: {fileID: 8300000, guid: 8ae95508564dcc24d83ed5d14714e51e, type: 3}
+  gameOverSFX: {fileID: 8300000, guid: 4fcd82185403b6345a0aabc61d4886e9, type: 3}
+  specialShotSFX: {fileID: 8300000, guid: 7fdef9add799b604cbc0387bfcc09bcf, type: 3}
+  notYetSpecialShotSFX: {fileID: 8300000, guid: 81b339f41a757ce4db9e8c9b72e93928, type: 3}
 --- !u!1 &1097680624
 GameObject:
   m_ObjectHideFlags: 0
