@@ -16,7 +16,7 @@ public class RandomSpecial : MonoBehaviour
         if (collision.tag == "Player")
         {
 
-            int randomSpecialIndex = 0; //Random.Range(0, 3);
+            int randomSpecialIndex = Random.Range(0, 3);
 
             switch (randomSpecialIndex)
             {
