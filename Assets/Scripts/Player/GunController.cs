@@ -23,18 +23,25 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // mouse position
         Vector3 direction = mousePos - transform.position;
+
+
+        
+
 
         gun.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)); // gun rotation
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         gun.position = transform.position + Quaternion.Euler(0, 0, angle) * new Vector3(gunDistance, 0, 0);
 
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && HaveBullets())
         {
             currentBullet--;
+            
+
             Shoot(direction);
             AudioManager.instance.PlayShootSFX();
             

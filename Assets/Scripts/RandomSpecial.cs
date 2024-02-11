@@ -9,6 +9,7 @@ public class RandomSpecial : MonoBehaviour
 
     public bool checkDrag;
 
+    private static int randomSpecialIndex = -1;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,8 +17,8 @@ public class RandomSpecial : MonoBehaviour
         if (collision.tag == "Player")
         {
 
-            int randomSpecialIndex = Random.Range(0, 3);
-
+            //int randomSpecialIndex = Random.Range(0, 3);
+            randomSpecialIndex++;
             switch (randomSpecialIndex)
             {
                 case 0:
