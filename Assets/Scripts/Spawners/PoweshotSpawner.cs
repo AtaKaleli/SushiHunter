@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PoweshotSpawner : MonoBehaviour
@@ -20,17 +19,22 @@ public class PoweshotSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.F) && timer >= specialShotCooldown)
+        if (!Death.instance.isPlayerDead)
         {
-            AudioManager.instance.PlaySpecialShotAudio();
-            StartCoroutine(SpecialShot());
-            timer = 0;
-            powershotUsed++;
+            if (Input.GetKeyDown(KeyCode.F) && timer >= specialShotCooldown)
+            {
+                AudioManager.instance.PlaySpecialShotAudio();
+                StartCoroutine(SpecialShot());
+                timer = 0;
+                powershotUsed++;
 
+            }
+
+            else if (Input.GetKeyDown(KeyCode.F) && timer < specialShotCooldown)
+                AudioManager.instance.PlayNotYetSpecialShotAudio();
         }
 
-        else if (Input.GetKeyDown(KeyCode.F) && timer < specialShotCooldown)
-            AudioManager.instance.PlayNotYetSpecialShotAudio();
+
 
     }
 
@@ -45,7 +49,7 @@ public class PoweshotSpawner : MonoBehaviour
             shootRB.AddForce(new Vector2(0, flingForce)); // Adjust the force or any other parameters as needed
             Destroy(newShoot, 5);
         }
-        
+
     }
 
 
