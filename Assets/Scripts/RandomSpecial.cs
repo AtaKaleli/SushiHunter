@@ -9,7 +9,7 @@ public class RandomSpecial : MonoBehaviour
 
     public bool checkDrag;
 
-    private static int randomSpecialIndex = -1;
+    
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,8 +17,8 @@ public class RandomSpecial : MonoBehaviour
         if (collision.tag == "Player")
         {
 
-            //int randomSpecialIndex = Random.Range(0, 3);
-            randomSpecialIndex++;
+            int randomSpecialIndex = Random.Range(0, 3);
+            
             switch (randomSpecialIndex)
             {
                 case 0:
@@ -71,7 +71,7 @@ public class RandomSpecial : MonoBehaviour
     IEnumerator StopTimer()
     {
         TeleportSpecial();
-        yield return new WaitForSeconds(0.003f);
+        yield return new WaitForSeconds(0.004f);
         UIManager.instance.ChangeSpecialCase1();
         Time.timeScale = 1;
         Destroy(gameObject);

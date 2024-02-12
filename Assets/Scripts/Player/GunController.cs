@@ -12,7 +12,7 @@ public class GunController : MonoBehaviour
     public int currentBullet;
     public int maxBullet = 15;
 
-    
+
     public int bulletsShooted = 0;
 
     void Start()
@@ -23,12 +23,12 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // mouse position
         Vector3 direction = mousePos - transform.position;
 
 
-        
+
 
 
         gun.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)); // gun rotation
@@ -36,25 +36,29 @@ public class GunController : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         gun.position = transform.position + Quaternion.Euler(0, 0, angle) * new Vector3(gunDistance, 0, 0);
 
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && HaveBullets())
+        if (!Death.instance.isPlayerDead)
         {
-            currentBullet--;
-            
+            if (Input.GetKeyDown(KeyCode.Mouse0) && HaveBullets())
+            {
+                currentBullet--;
 
-            Shoot(direction);
-            AudioManager.instance.PlayShootSFX();
-            
+
+                Shoot(direction);
+                AudioManager.instance.PlayShootSFX();
+
+            }
+
+            GunFlipController(mousePos);
+
+            if (Input.GetKeyDown(KeyCode.R) && !HaveBullets())
+            {
+                Reload();
+                AudioManager.instance.PlayReloadSFX();
+
+            }
         }
 
-        GunFlipController(mousePos);
 
-        if (Input.GetKeyDown(KeyCode.R) && !HaveBullets())
-        {
-            Reload();
-            AudioManager.instance.PlayReloadSFX();
-            
-        }
 
     }
 
@@ -87,7 +91,7 @@ public class GunController : MonoBehaviour
     private void Reload()
     {
         currentBullet = maxBullet;
-        if(UIManager.instance != null)
+        if (UIManager.instance != null)
             UIManager.instance.UpdateAmmoInfo(currentBullet, maxBullet);
     }
 

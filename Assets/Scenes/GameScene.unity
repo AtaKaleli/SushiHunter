@@ -2019,7 +2019,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.801
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6222,7 +6222,7 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 429569132}
   shootSFX: {fileID: 8300000, guid: c999e705a0c6fcf4c8f5fc7b872e416b, type: 3}
   ammoAddedSFX: {fileID: 8300000, guid: 474d314a532e05743a3aed2bdaa28ce9, type: 3}
-  slowTimeSFX: {fileID: 8300000, guid: c8ca13d3c9a6bea43a69289b3ad90625, type: 3}
+  slowTimeSFX: {fileID: 8300000, guid: ac03b6f4726ff08489c062e0f6d2fc91, type: 3}
   freezeSFX: {fileID: 8300000, guid: 0a45daa12a8e02d488296d8be5d62daa, type: 3}
   buttonClickSFX: {fileID: 8300000, guid: 426acf91fb4e1714aa7ab55570d9df48, type: 3}
   reloadSFX: {fileID: 8300000, guid: 8ae95508564dcc24d83ed5d14714e51e, type: 3}
@@ -9283,7 +9283,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a091031706abfd8449c5c3973609961d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.202
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10876,6 +10876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunController: {fileID: 1114388277}
+  playerGun: {fileID: 544332029}
 --- !u!212 &2039827650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10936,7 +10937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039827647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -6.6, z: 0}
+  m_LocalPosition: {x: -0.05, y: -6.51, z: 0}
   m_LocalScale: {x: 22.70742, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
