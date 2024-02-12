@@ -205,6 +205,22 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5998866913761358040, guid: 09ad5f26f2d54944f968b3bb10a4cc0e, type: 3}
   m_PrefabInstance: {fileID: 13025966}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &13025968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3271306212711051024, guid: 09ad5f26f2d54944f968b3bb10a4cc0e, type: 3}
+  m_PrefabInstance: {fileID: 13025966}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13025969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66173a4dc5169f0439f0f32321d59a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &13025969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5998866913829206601, guid: 09ad5f26f2d54944f968b3bb10a4cc0e, type: 3}
+  m_PrefabInstance: {fileID: 13025966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &201986758
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,9 +305,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
-        m_MethodName: OnClickBackFromHTP
+      - m_Target: {fileID: 597744119}
+        m_TargetAssemblyTypeName: skipTutorial, Assembly-CSharp
+        m_MethodName: OnClickSkipTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -351,6 +367,7 @@ GameObject:
   - component: {fileID: 597744117}
   - component: {fileID: 597744116}
   - component: {fileID: 597744115}
+  - component: {fileID: 597744119}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -442,6 +459,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &597744119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597744114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9279db303dce35347bde5ece40e5ab8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelLoaderTransition: {fileID: 13025969}
+  videoPlayer: {fileID: 1431110344}
+  levelLoader: {fileID: 13025968}
+  videoAudio: {fileID: 1345350488}
 --- !u!1 &1191015465
 GameObject:
   m_ObjectHideFlags: 0
