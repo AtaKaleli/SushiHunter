@@ -1,8 +1,10 @@
 <b>GAME DESIGN</b>
 
 Player Experience: Exciting
+
 Core Mechanic: Shoot the sushi
-Game Loop: Hunt the sushi by shooting them that falling down from the top.
+
+Game Loop: Hunt the sushi by shooting them falling down from the top.
 
 
 
