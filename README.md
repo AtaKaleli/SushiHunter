@@ -1,3 +1,12 @@
+<b>GAME DESIGN</b>
+
+Player Experience: Exciting
+Core Mechanic: Shoot the sushi
+Game Loop: Hunt the sushi by shooting them that falling down from the top.
+
+
+
+
 This game is made by Unity Game Engine, version 2021.3.17
 
 <b>Menu</b>
